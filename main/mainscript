@@ -1,26 +1,23 @@
 --Hello! You are using crowbar GUI--
-local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
-local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
-local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
-
-SaveManager:SetLibrary(Fluent)
-InterfaceManager:SetLibrary(Fluent)
-
-InterfaceManager:BuildInterfaceSection(Tabs.Settings)
-SaveManager:BuildConfigSection(Tabs.Settings)
-
-local Window = Fluent:CreateWindow({
-    Title = "crowbar GUI " .. "v0.1",
-    SubTitle = "by NotYourCrowbar(aka tAkEsToR)",
-    TabWidth = 160,
-    Size = UDim2.fromOffset(580, 460),
-    Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
-    Theme = "Dark",
-    MinimizeKey = Enum.KeyCode.LeftControl -- Used when theres no MinimizeKeybind
-}
-
--- Fluent provides Lucide Icons, they are optional
-local Tabs = {
-    Main = Window:AddTab({ Title = "Main", Icon = "house" }),
-    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
-}
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("crowbar GUI", "Synapse")
+local MainTab = Window:NewTab("Main")
+local MainSection = MainTab:NewSection("Main")
+MainSection:NewButton("FE Fly", "FE Fly is a FilterEnabled Fly script", function()
+    print("Clicked")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+end)
+local EmoteSection = Tab:NewSection("Emote's")
+EmoteSection:NewButton("Ken FE Emotes R15", "All Roblox Emotes for Free!", function()
+    print("Clicked")
+    loadstring(game:HttpGet("https://scriptblox.com/raw/Brookhaven-RP-all-emotes-6849"))()
+end)
+EmoteSection:NewButton("FE Animation hub[R6 - R15]", "A FE Animation hub for R6 and R15", function()
+    print("Clicked")
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Dvrknvss/UniversalFEScriptHub/main/UFE'))()
+end)
+local GUISection = MainTab:NewSection("GUI's")
+GUISection:NewButton("Hat Hub", "18+ Pls equiq many hats ", function()
+    print("Clicked")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/inkdupe/hat-scripts/refs/heads/main/updatedhathub.lua"))()
+end)
